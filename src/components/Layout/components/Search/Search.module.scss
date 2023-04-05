@@ -1,0 +1,94 @@
+.search-bar,
+.search-result {
+    // width: 361px;
+    // display: flex;
+    min-width: 200px;
+    // width: 100%;
+}
+.search-result {
+    width: 420px;
+}
+.search-bar {
+    display: flex;
+    // width: 346px;
+    height: var(--search-height);
+    background-color: rgba(22, 24, 35, 0.06);
+    border-radius: 92px;
+    padding: 12px 16px;
+    overflow: hidden;
+    position: relative;
+    align-items: center;
+    border: 1.5px solid transparent;
+    min-width: 200px;
+    &::after {
+        content: '';
+        position: absolute;
+        height: calc(var(--search-height) - var(--search-spacer-top) * 2);
+        background-color: rgba(22, 24, 35, 0.12);
+        width: 1px;
+        right: 52px;
+        top: var(--search-spacer-top);
+    }
+
+    &:focus-within {
+        border: 1.5px solid rgba(22, 24, 35, 0.2);
+    }
+
+    input {
+        flex: 1;
+        width: 346px;
+        color: var(--black);
+        font-size: 1.6rem;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        // height: 100%;
+        line-height: 2.2rem;
+        caret-color: red;
+    }
+    input:not(:placeholder-shown) ~ .Search-button {
+        svg {
+            color: rgba(22, 24, 35, 0.75);
+        }
+    }
+}
+
+.search-title {
+    color: rgba(22, 24, 35, 0.5);
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding: 5px 12px;
+}
+.clear,
+.spinner {
+    // display: none;
+    position: absolute;
+    right: calc(var(--search-button-witdh) + 16px);
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(22, 24, 35, 0.34);
+    // margin: 0px 12px;
+    align-items: center;
+}
+
+.Search-button {
+    background-color: transparent;
+    margin: -12px -16px;
+    padding: 11px 16px 11px 12px;
+    border: none;
+    outline: none;
+    font-size: 0;
+    margin-left: 0;
+    cursor: pointer;
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+    &:active {
+        background-color: rgba(22, 24, 35, 0.06);
+    }
+    svg {
+        color: rgba(22, 24, 35, 0.34);
+        height: 20px;
+        width: 24px;
+    }
+}
