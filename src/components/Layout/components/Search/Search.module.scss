@@ -70,6 +70,18 @@
     // margin: 0px 12px;
     align-items: center;
 }
+.spinner {
+    animation: spinner 1.5s linear infinite;
+}
+
+@keyframes spinner {
+    from {
+        transform: translateY(-50%) rotate(0);
+    }
+    to {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
 
 .Search-button {
     background-color: transparent;
