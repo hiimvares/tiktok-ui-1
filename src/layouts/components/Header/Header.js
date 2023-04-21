@@ -8,13 +8,13 @@ import 'tippy.js/dist/tippy.css';
 
 import styles from './Header.module.scss';
 import images from '~/assets/images';
-
-import Button from '~/components/Button';
+import config from '~/config';
+import Button from '~/components/Button/Button';
 import Menu from '~/components/Popper/Menu';
 import { faTiktok } from '@fortawesome/free-brands-svg-icons';
-import { MessBox, MessengerIcon } from '~/components/Icons';
-import Image from '~/components/Images';
-import Search from '../Search';
+import { MessBox, MessengerIcon } from '~/components/Icons/Icons';
+import Image from '~/components/Images/Images';
+import Search from '../Search/Search';
 
 const cx = classNames.bind(styles);
 const currentUser = true;
@@ -26,126 +26,6 @@ const MENU_ITEMS = [
         children: {
             title: 'Language',
             data: [
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'vi',
-                    title: 'Tiếng Việt',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'vi',
-                    title: 'Tiếng Việt',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'vi',
-                    title: 'Tiếng Việt',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'vi',
-                    title: 'Tiếng Việt',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'vi',
-                    title: 'Tiếng Việt',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'vi',
-                    title: 'Tiếng Việt',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'vi',
-                    title: 'Tiếng Việt',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'vi',
-                    title: 'Tiếng Việt',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'vi',
-                    title: 'Tiếng Việt',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'vi',
-                    title: 'Tiếng Việt',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'vi',
-                    title: 'Tiếng Việt',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'vi',
-                    title: 'Tiếng Việt',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'vi',
-                    title: 'Tiếng Việt',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'vi',
-                    title: 'Tiếng Việt',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'vi',
-                    title: 'Tiếng Việt',
-                },
                 {
                     code: 'en',
                     title: 'English',
@@ -210,14 +90,14 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <Link to={'/'} className={cx('logo')}>
+                <Link to={config.routes.home} className={cx('logo')}>
                     <img src={images.logo} alt="tiktok" />
                 </Link>
                 <Search />
 
                 <div className={cx('action')}>
-                    <Button text>
-                        <FontAwesomeIcon className={cx('upload-icon')} icon={faPlus} />
+                    <Button text leftIcon={<FontAwesomeIcon className={cx('upload-icon')} icon={faPlus} />}>
+                        {/* <FontAwesomeIcon  className={cx('upload-icon')} icon={faPlus} /> */}
                         Upload
                     </Button>
                     {currentUser ? (

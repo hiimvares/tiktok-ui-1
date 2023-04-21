@@ -6,12 +6,12 @@ import HeadlessTippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
 // import axios from 'axios';
 
-import * as searchServices from '~/apiServices/searchServices';
+import * as searchServices from '~/services/searchService';
 import styles from './Search.module.scss';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
-import AccountItem from '~/components/AccountItem';
+import AccountItem from '~/components/AccountItem/AccountItem';
 import { useDebounce } from '~/hooks';
-import { SearchIcon } from '~/components/Icons';
+import { SearchIcon } from '~/components/Icons/Icons';
 
 const cx = classNames.bind(styles);
 

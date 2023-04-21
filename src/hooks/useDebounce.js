@@ -4,8 +4,8 @@ function useDebounce(value, delay) {
     const [debounceValue, setDebounceValue] = useState(value);
     useEffect(() => {
         const handler = setTimeout(() => setDebounceValue(value), delay);
-        // eslint-disable-next-line
         return () => clearTimeout(handler);
+        // eslint-disable-next-line
     }, [value]);
 
     return debounceValue;
